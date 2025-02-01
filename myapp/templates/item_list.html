@@ -1,0 +1,29 @@
+<!-- <h2>Item List</h2>
+<a href="{% url 'create_item' %}">Add New Item</a>
+<ul>
+    {% for item in items %}
+        <li>{{ item.name }} - {{ item.price }} 
+            <a href="{% url 'update_item' item.pk %}">Edit</a>
+            <form action="{% url 'delete_item' item.pk %}" method="POST" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+    {% endfor %}
+</ul> -->
+<!-- test -->
+<h2>Item List</h2>
+<a href="{% url 'create_item' %}"> Add New Items</a>
+<ul>
+    {%  for item in items %}
+    <li>{{item.name}} - {{item.price}}
+        <a href="{% url 'update_item' item.pk %}">Edit</a>
+        <a href="{% url 'delete_item' item.pk %}">Delete</a>
+        <!-- <form action="{% url 'delete_item' item.pk %}" method="POST" style="display: inline;">
+            {% csrf_token %}
+            <button type="submit">Delete</button>
+        </form> -->
+
+    </li>
+    {% endfor %}
+</ul>
